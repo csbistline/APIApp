@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GIF THIS!</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- My stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+    <!-- FOR ALIGNMENT -->
+    <style>
+        div {
+            border: solid black 1px;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<div class="container ">
+    <h1>Super Awesome GIF Widgit Thingy</h1>
+
+    <div class="row">
+        <!-- SEARCH AND BUTTON AREA -->
+        <div class="col-md-4" id="searchArea">
+
+            <label for="button-input" class="h5">Add a GIF button</label><br>
+            <input type="text" id="button-input" class=""><br>
+            <input id="select-GIF" class="btn btn-danger" type="submit" value="ADD BUTTON"><br>
+            <div id="btnArea">BUTTONS GO HERE</div>
+        </div>
+
+        <!-- GIF AREA -->
+        <div class="col-md-8 d-flex flex-wrap justify-content-around" id="GIFArea">GIFS GO HERE<br>
+        </div>
+
+
+
+
+</div>
+
+<body>
+
+    <!-- Javascript for bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- My game JS -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
