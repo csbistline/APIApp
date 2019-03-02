@@ -153,13 +153,20 @@ $(document).ready(function () {
     // add a favorite to list
     $(document).on("click", ".favorite", function () {
         var favGIF = $(this).attr("data-gif");
+        if (favsArray === null) {favsArray = []};
         favsArray.push(favGIF);
         // set array to storage
         localStorage.setItem("favorites", JSON.stringify(favsArray));
         $("#favArea").empty();
         renderFavs(favsArray);
-
     });
+
+    $("#clearFavs").on("click", function () {
+        localStorage.clear();
+        readStorage();
+        $("#favArea").empty();
+    });
+
 
     // call function to initialize buttons
     renderButtons();
