@@ -7,10 +7,29 @@ $(document).ready(function () {
 
     var GIFbuttons = ["bill murray", "baseball", "chihuahua"];
     var returnLimit = 10;
+    var favsArray = []
 
     // ==================================
     // FUNCTIONS
     // ==================================
+
+    function renderFavs(arr) {
+        if (arr !== null) {
+            for (var i = 0; i < arr.length; i++) {
+                var favDiv = $("<div>");
+                var favImg = $("<img>").attr("src", arr[i]);
+                favDiv.append(favImg);
+                favDiv.append($("<hr>"));
+                $("#favArea").prepend(favDiv);
+            };
+        };
+    };
+
+    function readStorage() {
+        var arr = JSON.parse(localStorage.getItem("favorites"));
+        favsArray = arr;
+        renderFavs(arr)
+    };
 
     // add button on click
     $("#add-button").on("click", function () {
@@ -21,7 +40,7 @@ $(document).ready(function () {
             // push value to array of buttons
             GIFbuttons.push(newGIF);
             renderButtons();
-        }
+        };
     });
 
     // display buttons in button area
@@ -88,16 +107,17 @@ $(document).ready(function () {
                 var gifSource = $("<div>").addClass("card-text");
                 gifSource.text(results[i].source_tld);
 
-                // make the star
+                // make the starfooter
                 var favStar = $("<i>").addClass("fas fa-star text-warning");
                 var favText = $("<a>").text(" Add to favorites")
+
+                // collect all the data about the image in a string
                 var starDiv = $("<div>").addClass("favorite card-footer");
+                starDiv.attr("data-gif", results[i].images.fixed_width.url);
+
+
+                // append that div
                 starDiv.append(favStar, favText);
-
-            //     <div class="card-footer text-muted">
-            //     2 days ago
-            //   </div>
-
 
                 // build out div
                 cardBody.append(gifTitle, ratings, gifSource);
@@ -105,6 +125,8 @@ $(document).ready(function () {
                 // prepend to gifarea
                 $("#GIFArea").prepend(termDiv);
             }
+
+            // create a header for GIFs
             var alertDiv = $("<div>").addClass("alert alert-success col-md-12");
             alertDiv.attr("role", "alert");
             var alertHeader = $("<h4>").addClass("alert-heading").text(searchTerm + " GIFs");
@@ -128,8 +150,19 @@ $(document).ready(function () {
         }
     });
 
+    // add a favorite to list
+    $(document).on("click", ".favorite", function () {
+        var favGIF = $(this).attr("data-gif");
+        favsArray.push(favGIF);
+        // set array to storage
+        localStorage.setItem("favorites", JSON.stringify(favsArray));
+        $("#favArea").empty();
+        renderFavs(favsArray);
+
+    });
 
     // call function to initialize buttons
     renderButtons();
+    readStorage();
 
 });

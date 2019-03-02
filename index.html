@@ -30,7 +30,7 @@
 </head>
 
 <div class="container ">
-    <h1>Super Awesome GIF Widgit Thingy</h1>
+    <h1 class="text-center">Super Awesome GIF Widgit Thingy</h1>
 
     <div class="row">
         <!-- SEARCH AND BUTTON AREA -->
@@ -46,15 +46,20 @@
 
         <!-- GIF AREA -->
         <div class="col-md-6 d-flex flex-wrap justify-content-between" id="GIFArea">
-         
+
         </div>
 
-        <div class="col-md-3" id="favArea">
+        <div class="col-md-3">
             <h5>
                 <i class="fas fa-star text-warning"></i>
-                Favorites
+                Favorites <span id="clearFavs" class="badge badge-danger font-weight-light">[clear]</span>
             </h5>
+            <div id="favArea">
+                </div>
         </div>
+
+
+
 
 
     </div>
