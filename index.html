@@ -9,6 +9,9 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- My stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- jQuery -->
@@ -22,7 +25,7 @@
             border: solid black 1px;
             box-sizing: border-box;
         }
-    </style> --> 
+    </style> -->
 
 </head>
 
@@ -31,34 +34,42 @@
 
     <div class="row">
         <!-- SEARCH AND BUTTON AREA -->
-        <div class="col-md-4" id="searchArea">
+        <div class="col-md-3" id="searchArea">
 
             <label for="button-input" class="h5">Add a GIF button</label><br>
-            <input type="text" id="button-input" class=""><br>
+            <input type="text" id="button-input" class="mb-2"><br>
             <input id="add-button" class="btn btn-danger" type="submit" value="ADD BUTTON"><br>
-            <div id="btnArea">BUTTONS GO HERE</div>
+            <hr>
+            <div id="btnArea"></div>
+            <hr>
         </div>
 
         <!-- GIF AREA -->
-        <div class="col-md-8 d-flex flex-wrap justify-content-around" id="GIFArea"><br>
+        <div class="col-md-6 d-flex flex-wrap justify-content-between" id="GIFArea">
+         
+        </div>
+
+        <div class="col-md-3" id="favArea">
+            <h5>
+                <i class="fas fa-star text-warning"></i>
+                Favorites
+            </h5>
         </div>
 
 
+    </div>
 
+    <body>
 
-</div>
-
-<body>
-
-    <!-- Javascript for bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <!-- My game JS -->
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
-</body>
+        <!-- Javascript for bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+        <!-- My game JS -->
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
+    </body>
 
 </html>
