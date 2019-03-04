@@ -58,7 +58,7 @@ $(document).ready(function () {
         }
     }
 
-    // display 9 GIFS of button pressed
+    // display 10 GIFS of button pressed
     $(document).on("click", ".search-GIF", function () {
         // debugger;
         var searchTerm = $(this).attr("data-term");
